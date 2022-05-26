@@ -1,86 +1,56 @@
-var c = document.getElementById("pie");
-var context = c.getContext("2d");
+var cpie = document.getElementById("pie");
+var ctxpie = cpie.getContext("2d");
 
-    var width = 600;
-    var height = 400;
-    var x = 200;
-    var y = 200;
-    var r = 150;
-    var startDeg = 0;
+var width = 600;
+var height = 400;
+var x = 200;
+var y = 200;
+var r = 150;
+var startDeg = 0-(0.5*Math.PI);
 
-    var field1=[];
-    var field2=[];
+var negara=[];
+var populasi=[];
 
-    d3.csv("worldpop.csv",function(csv){
-      csv.map(function(d){
-        field1.push(d.Country);
-        field2.push(+d.Population);
-      })
-      console.log("field1",field1);
-      console.log("field2",field2);
+d3.csv("pops_sampled.csv",function(csv){
+  csv.map(function(d){
+    negara.push(d.Country);
+    populasi.push(+d.Population);
+  })
+  console.log("negara",negara);
+  console.log("populasi",populasi);
 
 
-      var n = field2.length;
-      console.log(n);
-      var total = 0;
+  var n = populasi.length;
+  console.log(n);
+  var total = 0;
 
-      for(var i=0; i<n; i++){
-        total += field2[i];
-      }
-      console.log(total);
+  for(var i=0; i<n; i++){
+    total += populasi[i];
+  }
+  console.log(total);
+  
+  var palette1 = ['#00429d', '#4771b2', '#73a2c6', '#a5d5d8', '#ffffe0', '#ffbcaf', '#f4777f', '#cf3759', '#93003a'];
 
-      for(var i=0; i<n; i++){
-        var randomColor = Math.floor(Math.random()*16777215).toString(16);
-        
-        context.fillStyle = '#' + randomColor;
-        context.beginPath();
-        context.moveTo(x,y);
-        context.arc(x, y, r, startDeg, startDeg+(field2[i]/total)*(2*Math.PI));
-        context.closePath();
-        context.fill();
-
-        context.fillRect(width-50, (height-50)-(i*40), 30, 30);
-        context.strokeStyle = "black";
-        context.strokeRect(width-50, (height-50)-(i*40), 30, 30);
-        context.fillStyle = 'black';
-        context.textAlign = 'end';
-        context.textBaseline = 'middle';
-        context.fillText(field1[i], width-60, (height-35)-(i*40));
-
-        console.log(startDeg);
-        startDeg += (field2[i]/total)*(2*Math.PI);
-
-      }
-    });
-
+  for(var i=0; i<n; i++){
+    var randomColor = '#' + Math.random().toString(16).slice(2, 8);
     
+    ctxpie.fillStyle = palette1[i];
+    ctxpie.beginPath();
+    ctxpie.moveTo(x,y);
+    ctxpie.arc(x, y, r, startDeg, startDeg+(populasi[i]/total)*(2*Math.PI));
+    ctxpie.closePath();
+    ctxpie.fill();
 
-    // var data1 = [
-    //   ["Afghanistan", 38928346],
-    //   ["Albania", 2877797],
-    //   ["Algeria", 43851044],
-    //   ["Angola", 32866272],
-    // ];
-    
-    // var n = data1.length;
-    // console.log(n);
-    // var total = 0;
+    ctxpie.fillRect(width-50, 50+(i*40), 30, 30);
+    ctxpie.strokeStyle = "black";
+    ctxpie.strokeRect(width-50, 50+(i*40), 30, 30);
+    ctxpie.fillStyle = 'black';
+    ctxpie.textAlign = 'end';
+    ctxpie.textBaseline = 'middle';
+    ctxpie.fillText(negara[i], width-60, 65+(i*40));
 
-    // for(var i=0; i<n; i++){
-    //   total += data1[i][1];
-    // }
-    // console.log(total);
+    console.log(startDeg);
+    startDeg += (populasi[i]/total)*(2*Math.PI);
 
-    // for(var i=0; i<n; i++){
-    //   var randomColor = Math.floor(Math.random()*16777215).toString(16);
-      
-    //   context.fillStyle = '#' + randomColor;
-    //   context.beginPath();
-    //   context.moveTo(x,y);
-    //   context.arc(x, y, r, startDeg, startDeg+(data1[i][1]/total)*(2*Math.PI));
-    //   context.closePath();
-    //   context.fill();
-
-    //   console.log(startDeg);
-    //   startDeg += (data1[i][1]/total)*(2*Math.PI);
-    // }
+  }
+});
