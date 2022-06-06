@@ -14,19 +14,65 @@
 </head>
 <body>
     <div class="container">
-        <div class="row my-4">
-            <h1 class="text-center fw-bold">Proyek GKV</h1>
-            <h4 class="text-center">Visualisasi Data Populasi Dunia</h4>
+        <!-- Judul -->
+        <div class="row my-4 text-center">
+            <h1 class="fw-bold">Visualisasi Data Populasi Dunia</h1>
+            <h4>Proyek Tugas Akhir GKV</h4>
+            <p>canvas-sketch</p>
         </div>
         
+        <!-- Bar Chart Big 5 -->
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-sm-6">
+                <h3 class="fw-bold">5 Negara Dengan Populasi Terbesar</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus vitae tempora hic quaerat quibusdam dolor officia et natus quod nostrum.</p>
+            </div>
+            <canvas class="col-sm-6" id="" width="1000" height="720"></canvas>
+        </div>   
+
+        <!-- Pie Chart China vs World -->
         <div class="row d-flex justify-content-center align-items-center">
             <canvas class="col-sm-6" id="pie" width="1000" height="720"></canvas>
             <div class="col-sm-6">
                 <h3 class="fw-bold">China vs The World</h3>
                 <p>Cina merupakan negara dengan populasi terbanyak di dunia. Diagram pie di samping merupakan visualisasi perbandingan dari populasi Cina dengan populasi dunia.</p>
             </div>
+        </div>        
+
+        <!-- Bubble Chart Population -->
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-sm-6">
+                <h3 class="fw-bold">Populasi Dunia</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In sint ut atque modi odio voluptates impedit, quas magnam! Quam, error.</p>
+            </div>
+            <canvas class="col-sm-6" id="" width="1000" height="720"></canvas>
+        </div>   
+        
+        <!-- Dataset -->
+        <div class="row text-center my-4">
+            <h4 class="fw-bold">Dataset</h4>
+            <a href="https://www.kaggle.com/datasets/anandhuh/countries-in-the-world-by-population-2022">Countries in the World by Population 2022</a>
+        </div>
+
+        <!-- Kelompok -->
+        <div class="row text-center my-4 justify-content-center">
+            <h5>KOM1304 - Grafika Komputer dan Visualisasi</h5>
+            <p>Paralel K2 Kelompok 6</p>
+            <table>
+                <tr>
+                    <th class="col-sm-4">Nama</th>
+                    <th class="col-sm-4">NIM</th>
+                </tr>
+                <tr>
+                    <td>Faiz Byputra</td>
+                    <td>G6401201056</td>
+                </tr>
+            </table>
         </div>
     </div>
+
+    <script src=""></script>
     <script src="piechart.js"></script>
+    <script src=""></script>
 </body>
 </html>

@@ -12,7 +12,7 @@ var startDeg = 0-(0.5*Math.PI);
 var negara=[];
 var populasi=[];
 
-d3.csv("pops_sorted.csv",function(csv){
+d3.csv("data/pops_sorted.csv",function(csv){
   csv.map(function(d){
     negara.push(d.Country);
     populasi.push(+d.Population);
@@ -35,7 +35,7 @@ d3.csv("pops_sorted.csv",function(csv){
   for(var i=0; i<n; i++){
     var randomColor = '#' + Math.random().toString(16).slice(2, 8);
     
-    // Draw slices of pie
+    // Menggambar potongan lingkaran
     if(i === 0){ ctxpie.fillStyle = palette1[i]; }  
     else if(i > 0){ ctxpie.fillStyle = palette1[2]; }
     ctxpie.beginPath();
