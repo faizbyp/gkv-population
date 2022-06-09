@@ -1,82 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.1.1/d3.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
-    <title>GKV</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.1.1/d3.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="favicon-32x32.png" />
+    <title>GKV - Plotly</title>
+  </head>
+  <body>
     <div class="container">
-        <!-- Judul -->
-        <div class="row my-4 text-center">
-            <h1 class="fw-bold">Visualisasi Data Populasi Dunia</h1>
-            <h4>Proyek Tugas Akhir GKV</h4>
-            <p>canvas-sketch</p>
-        </div>
-        
-        <!-- Bar Chart Big 5 -->
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-sm-6">
-                <h3 class="fw-bold">5 Negara Dengan Populasi Terbesar</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus vitae tempora hic quaerat quibusdam dolor officia et natus quod nostrum.</p>
-            </div>
-            <canvas class="col-sm-6" id="" width="1000" height="720"></canvas>
-        </div>   
-
-        <!-- Pie Chart China vs World -->
-        <div class="row d-flex justify-content-center align-items-center">
-            <canvas class="col-sm-6" id="pie" width="1000" height="720"></canvas>
-            <div class="col-sm-6">
-                <h3 class="fw-bold">China vs The World</h3>
-                <p>Cina merupakan negara dengan populasi terbanyak di dunia. Diagram pie di samping merupakan visualisasi perbandingan dari populasi Cina dengan populasi dunia.</p>
-            </div>
-        </div>        
-
-        <!-- Bubble Chart Population -->
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-sm-6">
-                <h3 class="fw-bold">Populasi Dunia</h3>
-                <p>Bubble Chart disamping menunjukkan hubungan antara Land Area dan Fertility Area suatu negara dengan menggunakan populasi yang digambarkan oleh radius lingkaran.</p>
-            </div>
-            <canvas class="col-sm-6" id="bubble" width="1000" height="720"></canvas>
-        </div>   
-        
-        <!-- Dataset -->
-        <div class="row text-center my-4">
-            <h4 class="fw-bold">Dataset</h4>
-            <a href="https://www.kaggle.com/datasets/anandhuh/countries-in-the-world-by-population-2022">Countries in the World by Population 2022</a>
-        </div>
-
-        <!-- Kelompok -->
-        <div class="row text-center my-4 justify-content-center">
-            <h5>KOM1304 - Grafika Komputer dan Visualisasi</h5>
-            <p>Paralel K2 Kelompok 6</p>
-            <table>
-                <tr>
-                    <th class="col-sm-4">Nama</th>
-                    <th class="col-sm-4">NIM</th>
-                </tr>
-                <tr>
-                    <td>Faiz Byputra</td>
-                    <td>G6401201056</td>
-                </tr>
-                <tr>
-                    <td>Qais Jabbar Ihkamuddin</td>
-                    <td>G6401201120</td>
-                </tr>
-            </table>
-        </div>
+      <div class="row my-4 text-center">
+        <h1 class="text-center fw-bold">Proyek GKV</h1>
+        <h4 class="text-center">Visualisasi Data Populasi Dunia</h4>
+        <p>plotly</p>
+      </div>
     </div>
 
-    <script src=""></script>
+    <!-- Add Charts  -->
+    <div class="graphBoxup">
+      <div class="box">
+        <!-- <div id="linescatter"> </div> -->
+        <div id="pieplot"></div>
+      </div>
+
+      <div class="box"></div>
+
+      <div class="box"></div>
+
+      <div class="box"></div>
+    </div>
+
+    <!-- ADD MAPS -->
+    <div class="graphBoxmap">
+      <div class="boxmap">
+        <div id="mapschart"></div>
+        <div id="mapschartcontinent"></div>
+      </div>
+    </div>
+
+    <div id="heatmap"></div>
+    <div class="justify-content-center text-center mt-n2 mb-3">
+      <a
+        target="_blank"
+        href="https://github.com/faizbyp/gkv-population/blob/plotly/Perhitungan_Heatmap_dengan_EDA.ipynb"
+        >sumber perhitungan</a
+      >
+    </div>
+    <h5>💡 Interpretasi:</h5>
+    - Jumlah populasi berbanding terbalik dengan perubahan penduduk setiap
+    tahunnya (yearly change)
+    <br />
+    - Ada hubungan langsung yang kuat dengan luas negara (land area Km²) dengan
+    populasi
+    <br />
+    - Tingkat kesuburan (fert rate) rendah di negara-negara dengan populasi
+    tinggi
+    <br />
+    - Di negara-negara populasi tinggi, lebih sedikit orang yang tinggal di
+    kota-kota perkotaan (urban pop %)
+    <br />
+    - Populasi memiliki hubungan langsung dengan umur median (median age)
+    <br />
+
     <script src="piechart.js"></script>
-    <script src="bubble.js"></script>
-</body>
+    <script src="mapschart.js"></script>
+    <script src="mapschartcontinent.js"></script>
+    <script src="heatmap.js"></script>
+    <script src="utils.js"></script>
+  </body>
 </html>
