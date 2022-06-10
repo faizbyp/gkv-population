@@ -71,7 +71,7 @@ d3.csv("data/pops_sorted.csv",function(csv){
   ctxbubble.save();
   ctxbubble.font = "bolder 25px Plus Jakarta Sans";
   ctxbubble.fillStyle = "black";
-  ctxbubble.fillText("WORLD POPULATION 2022", 50,50);
+  ctxbubble.fillText("WORLD POPULATION 2020", 50,50);
   ctxbubble.restore();
 
   var palette1 = ['#00429d', '#4771b2', '#73a2c6', '#a5d5d8', '#ffffe0', '#ffbcaf', '#f4777f', '#cf3759', '#93003a'];
