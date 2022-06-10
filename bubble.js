@@ -3,16 +3,11 @@ var ctxbubble = cbubble.getContext("2d");
 
 var width = 1000;
 var height = 720;
-var x = 400;
-var y = 360;
-var r = 300;
-var rectW = 50;
 
 var negara=[];
 var populasi=[];
 var land=[];
 var fert=[];
-
 
 d3.csv("data/pops_sorted.csv",function(csv){
   csv.map(function(d){
@@ -74,7 +69,7 @@ d3.csv("data/pops_sorted.csv",function(csv){
 
   //judul
   ctxbubble.save();
-  ctxbubble.font = "25px Courier New extrabold";
+  ctxbubble.font = "bolder 25px Plus Jakarta Sans";
   ctxbubble.fillStyle = "black";
   ctxbubble.fillText("WORLD POPULATION 2022", 50,50);
   ctxbubble.restore();
@@ -111,62 +106,10 @@ d3.csv("data/pops_sorted.csv",function(csv){
       ctxbubble.restore();
       ctxbubble.save();
       ctxbubble.translate(0, height);
-      ctxbubble.font = `${radius}px Arial`;
-      ctxbubble.fillStyle = "#373737";
+      ctxbubble.font = `${radius}px Plus Jakarta Sans`;
+      ctxbubble.fillStyle = "#888888";
       ctxbubble.fillText(negara[i],centerX+2,-centerY+8);
       ctxbubble.restore();
     }
   
-}
-);
-/*const sketch = () => {
-  return ({ ctxbubble, width, height }) => {
-    ctxbubble.fillStyle = 'white';
-    ctxbubble.fillRect(0, 0, width, height);
-    const maxLifespan = 90;
-    const maxIncome = 115000;
-    const maxPopulation = 900000000;
-    const skala = 20;
-    
-    
-   
-    for(var i = 0; i < data.length; i++){
-      var centerX = (data[i][0]/maxIncome)*width+skala;
-      var centerY = (data[i][1]/maxLifespan)*height+skala;
-      var radius = (data[i][2]/maxPopulation)*80;
-      
-      switch(data[i][3]){
-        case 1:
-          ctxbubble.fillStyle = '#f45467';//merah
-          break;
-          case 2:
-            ctxbubble.fillStyle = '#36fe1d';//ijo   
-            
-            break;
-            case 3:
-              ctxbubble.fillStyle = '#17f0e8';//biru        
-              break;
-            case 4:
-                ctxbubble.fillStyle = 'yellow';//kuning
-                break;
-            }
-      
-      ctxbubble.save();
-      ctxbubble.translate(0, height);
-      ctxbubble.scale(1, -1);      
-      ctxbubble.beginPath();
-      ctxbubble.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-      ctxbubble.fill();
-      ctxbubble.restore();
-      ctxbubble.save();
-      ctxbubble.translate(0, height);
-      ctxbubble.font = `${radius}px Arial`;
-      ctxbubble.fillStyle = "#373737";
-      ctxbubble.fillText(data[i][4],centerX+2,-centerY+8);
-      ctxbubble.restore();
-    }
-  };
-};
-
-canvasSketch(sketch, settings);
-*/
+});

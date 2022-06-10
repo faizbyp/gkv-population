@@ -3,10 +3,6 @@ var ctxBar = cBar.getContext("2d");
 
 var width = 1000;
 var height = 720;
-var x = 400;
-var y = 360;
-var r = 300;
-var rectW = 90;
 var lebar = 70;
 
 var negara1=[];
@@ -67,20 +63,20 @@ d3.csv("data/land_sorted.csv",function(csv){
 
     //judul
     ctxBar.save();
-    ctxBar.font = "25px Courier New extrabold";
+    ctxBar.font = "bolder 25px Plus Jakarta Sans";
     ctxBar.fillStyle = "black";
     ctxBar.fillText("5 BIGGEST AREA COUNTRY", 100,50);
     ctxBar.restore();
 
 
-      ctxBar.fillStyle="blue";
+      ctxBar.fillStyle="#00429d";
       ctxBar.fillRect(90, height - 530, 70, 510 );
       ctxBar.fillRect(290, height - 430, 70, 410 );
       ctxBar.fillRect(510, height - 330, 70, 310 );
       ctxBar.fillRect(690, height - 230, 70, 210 );
       ctxBar.fillRect(890, height - 130, 70, 110 );
       ctxBar.restore();
-      ctxBar.fillStyle="blue";
+      ctxBar.fillStyle="#00429d";
       ctxBar.font = "20px Arial bold";
       ctxBar.fillText(sortedLand[0],85, 180);
       ctxBar.fillText(sortedLand[1],290, 280);
